@@ -1,19 +1,20 @@
 # word2vec
-copy code from 我爱自然语言处理
+##copy code from 我爱自然语言处理
 
-原文链接 http://www.52nlp.cn/中英文维基百科语料上的word2vec实验
-下载数据
+###原文链接 http://www.52nlp.cn/中英文维基百科语料上的word2vec实验
+###下载数据
 nohup wget -o enwiki-latest-pages-articles.xml.bz2 https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2 &
 
 
-# 其他
-中文语料
+## 其他
+###中文语料
 https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
-繁体转简体
+###繁体转简体
+https://github.com/BYVoid/OpenCC
 opencc -i wiki.zh.text -o wiki.zh.text.jian -c zht2zhs.ini
-一种分词方式
+###一种分词方式
 mecab -d ../data/ -O wakati wiki.zh.text.jian -o wiki.zh.text.jian.seg -b 10000000
-一种解决编码问题的方式
+###一种解决编码问题的方式
 iconv -c -t UTF-8 < wiki.zh.text.jian.seg > wiki.zh.text.jian.seg.utf-8
 
 
