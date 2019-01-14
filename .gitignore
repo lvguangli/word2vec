@@ -1,1 +1,4 @@
 .idea
+test*.py
+documents/
+nohup.out

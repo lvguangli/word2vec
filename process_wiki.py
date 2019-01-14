@@ -7,7 +7,6 @@
 
 import logging
 import os.path
-import six
 import sys
 
 from gensim.corpora import WikiCorpus
@@ -31,13 +30,7 @@ if __name__ == '__main__':
     output = open(outp, 'w')
     wiki = WikiCorpus(inp, lemmatize=False, dictionary={})
     for text in wiki.get_texts():
-        if six.PY3:
-            output.write(b' '.join(text).decode('utf-8') + '\n')
-        #   ###another method###
-        #    output.write(
-        #            space.join(map(lambda x:x.decode("utf-8"), text)) + '\n')
-        else:
-            output.write(space.join(text) + "\n")
+        output.write(space.join(text) + "\n")
         i = i + 1
         if i % 10000 == 0:
             logger.info("Saved " + str(i) + " articles")
